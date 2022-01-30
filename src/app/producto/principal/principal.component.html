@@ -1,0 +1,21 @@
+<div class="body">
+
+
+
+    <form [formGroup]="regularForm">
+        <h1>BIBLIOTECA ESCOLAR</h1>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Libro</mat-label>
+          <input matInput placeholder="Nombre del libro a buscar" formControlName="prin_nombre" (change)="cargarDatosConsulta()" >
+        </mat-form-field>
+        
+        <button mat-mini-fab color="primary" (click)="cambioPaginacion('pag')" aria-label="paginacion">
+            <mat-icon>description</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary" (click)="cambioPaginacion('info')" aria-label="paginacion">
+            <mat-icon>visibility</mat-icon>
+        </button>
+
+        <app-lista [rowData]="rowList" [paginacion]="paginationList" [columnDefs]="columnsList" (salidaLista)="asignarLibro($event)"></app-lista>
+    </form>
+</div>

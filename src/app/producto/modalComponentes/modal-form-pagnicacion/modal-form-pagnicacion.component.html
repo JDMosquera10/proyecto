@@ -1,0 +1,11 @@
+<form [formGroup]="regularForm">
+    <H1>CAMBIAR CANTIDAD PAGINACION</H1>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Cantidad</mat-label>
+      <input matInput placeholder="cantidad que desea para la paginacion" type="number" formControlName="pagin_cantidad">
+    </mat-form-field>
+    <br>
+    <button mat-mini-fab color="primary" [mat-dialog-close]="regularForm.value.pagin_cantidad" aria-label="paginacion">
+        <mat-icon>description</mat-icon>
+      </button>
+</form>
