@@ -1,3 +1,8 @@
+/**
+ * @description componente papa que hace llamado de los componentes de las listas y modal
+ * @author Jhonatan David Mosquera
+ * @date 29-01-2022
+ */
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ColDef } from 'ag-grid-community';
@@ -46,6 +51,14 @@ export class PrincipalComponent implements OnInit {
 
   }
 
+  
+ /**
+     * @description obtiene los datos para la carga de datos de la lista mediante el servicio de datos segun el filtro
+     * @author Jhonatan David Mosquera
+     * @date 29-01-2022
+     * @param
+     * @returns void
+     */
   cargarDatosConsulta(){
     try {
       let filtro = this.regularForm.value.prin_nombre;
@@ -60,6 +73,14 @@ export class PrincipalComponent implements OnInit {
     }
   }
 
+  
+ /**
+     * @description funcion que recibe un tipo para cargar el modal correspondiente al tipo enviado
+     * @author Jhonatan David Mosquera
+     * @date 29-01-2022
+     * @param
+     * @returns void
+     */
   cambioPaginacion(option:any){
     try {
       let datos;
@@ -72,11 +93,8 @@ export class PrincipalComponent implements OnInit {
         if(this.stateselect){
           datos = this.libroselect;
           widthsend = '750px';
-        }else{
-          
         }
       }
-      // '250px'
         const dialogRef = this.dialog.open(this.component, {
           width: widthsend,
           data: datos,
@@ -92,6 +110,14 @@ export class PrincipalComponent implements OnInit {
     }
   }
 
+  
+ /**
+     * @description asigna la seleccion del libro enviado desde la lista a una variable 
+     * @author Jhonatan David Mosquera
+     * @date 29-01-2022
+     * @param
+     * @returns void
+     */
   asignarLibro(libro: any){
     this.stateselect = true;
     this.libroselect = libro;
